@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    width: 99vw;
+    height: 98vh;
+}
+.container {
+    /*display: grid;
+    grid-template: repeat(4, 1fr) / repeat(5, 1fr); */
+    width: 600px;
+    height: 900px;
+    background-color: violet;
+}
