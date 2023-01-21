@@ -1,12 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=JetBrains+Mono&display=swap');
+
 body {
     margin: 0;
     width: 99vw;
     height: 98vh;
 }
 .container {
-    /*display: grid;
-    grid-template: repeat(4, 1fr) / repeat(5, 1fr); */
-    width: 600px;
-    height: 900px;
-    background-color: violet;
+    display: grid;
+    grid-template: repeat(7, 1fr) / repeat(4, 1fr); 
+    width: 40%;
+    height: 80%;
+    margin: auto;
+}
+
+.screen {
+    grid-area: 1/1/2/4;
+    background-color: rgb(47, 47, 47);
+}
+.zero-button {
+    grid-column: 1/1;
+    grid-row: 7/7;
+}
+.dot-button {
+    grid-column: 2/2;
+    grid-row: 7/7;
+}
+.add-button {
+    grid-column: 3/3;
+    grid-row: 7/7; 
+}
+.equals-button {
+    grid-column: 4/4;
+    grid-row: 7/7;
+    background-color: rgb(0, 75, 0);
+}
+.one-button {
+    grid-column: 1/1;
+    grid-row: 6/6;
+}
+.two-button {
+    grid-column: 2/2;
+    grid-row: 6/6;
+}
+.three-button {
+    grid-column: 3/3;
+    grid-row: 6/6;
+}
+.subtract-button {
+    grid-area: 6/4/6/4;
+}
+.four-button {
+    grid-area: 5/1/5/1;
+}
+.five-button {
+    grid-area: 5/2/5/2;
+}
+.six-button {
+    grid-area: 5/3/5/3;
+}
+.multiply-button {
+    grid-area: 5/4/5/4;
+}
+.seven-button {
+    grid-area: 4/1/4/1;
+}
+.eight-button {
+    grid-area: 4/2/4/2;
+}
+.nine-button {
+    grid-area: 4/3/4/3;
+}
+.divide-button {
+    grid-area: 4/4/4/4;
+}
+.clear-button {
+    grid-area: 3/1/3/1;
+    background-color: brown;
+}
+.backspace-button {
+    grid-area: 3/2/3/2;
+    background-color: rgb(82, 18, 18);
+}
+.square-power-button {
+    grid-area: 3/4/3/4;
+}
+.square-root-button {
+    grid-area: 3/3/3/3;
+}
+.material-symbols-outlined-backspace {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+.button-styling {
+    color: white;
+    font-family: 'JetBrains Mono', sans-serif;
+    font-size: 175%;
+}
+
+.number {
+    background-color: rgb(47, 47, 47);
+}
+
+.sign {
+    background-color: rgb(93, 93, 93);
 }
