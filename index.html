@@ -17,23 +17,23 @@
     </header>
     <div class="container">
         <div class="screen"></div>
-        <button class="zero-button button-styling number">0</button>
-        <button class=" dot-button button-styling number">.</button>
-        <button class="equals-button button-styling">=</button>
-        <button class="one-button button-styling number">1</button>
-        <button class="two-button button-styling number">2</button>
-        <button class="three-button button-styling number">3</button>
-        <button class="four-button button-styling number">4</button>
-        <button class="five-button button-styling number">5</button>
-        <button class="six-button button-styling number">6</button>
-        <button class="seven-button button-styling number">7</button>
-        <button class="eight-button button-styling number">8</button>
-        <button class="nine-button button-styling number">9</button>
+        <button class="zero-button button-styling number" onclick="addInDisplay('0', previous)">0</button>
+        <button class=" dot-button button-styling number" onclick="addInDisplay('.', previous)">.</button>
+        <button class="equals-button button-styling" onclick="solveOperation()">=</button>
+        <button class="one-button button-styling number" onclick="addInDisplay('1', previous)">1</button>
+        <button class="two-button button-styling number" onclick="addInDisplay('2', previous)">2</button>
+        <button class="three-button button-styling number" onclick="addInDisplay('3', previous)">3</button>
+        <button class="four-button button-styling number" onclick="addInDisplay('4', previous)">4</button>
+        <button class="five-button button-styling number" onclick="addInDisplay('5', previous)">5</button>
+        <button class="six-button button-styling number" onclick="addInDisplay('6', previous)">6</button>
+        <button class="seven-button button-styling number" onclick="addInDisplay('7', previous)">7</button>
+        <button class="eight-button button-styling number" onclick="addInDisplay('8', previous)">8</button>
+        <button class="nine-button button-styling number" onclick="addInDisplay('9', previous)">9</button>
         <button class="add-button button-styling sign">+</button>
         <button class="subtract-button button-styling sign">-</button>
         <button class="multiply-button button-styling sign">*</button>
         <button class="divide-button button-styling sign">/</button>
-        <button class="clear-button button-styling">Clear</button>
+        <button class="clear-button button-styling" onclick="clear()">Clear</button>
         <button class="backspace-button button-styling">
             <span class="material-symbols-outlined">
                 backspace

@@ -1,3 +1,8 @@
+let a = '', b = '', operator = '';
+let screen = document.querySelector('.screen');
+let previous = '';
+let isA = true;
+
 function add(a, b) {
     return (a + b);
 }
@@ -10,16 +15,67 @@ function multiply(a, b) {
 function divide(a, b) {
     return (a / b)
 }
+function squarePower(a) {
+    return a * a;
+}
+function squareRoot(a) {
+    return Math.sqrt(a);
+}
 
 function operate(operator, a, b) {
     if (operator === '+') {
-        return add(a, b);
+        a = add(a, b);
+        screen.textContent = a;
+        reset();
     } else if (operator === '-') {
-        return subtract(a, b);
+        a = subtract(a, b);
+        screen.textContent = a;
+        reset();
     } else if (operator === '*') {
-        return multiply(a, b);
+        a = multiply(a, b);
+        screen.textContent = a;
+        reset();
+    } else if (operator === '/') {
+        a = divide(a, b);
+        screen.textContent = a;
+        reset();
+    } else if (operator === 'power') {
+        a = squarePower(a);
+        screen.textContent = a;
+        reset();
     } else {
-        return divide(a, b);
+        a = squareRoot(a);
+        screen.textContent = a;
+        reset();
     }
 }
 
+function reset() {
+    a = '';
+    b = '';
+    operator = '';
+}
+function clear() {
+    screen.textContent = '';
+    reset();
+}
+function assignOperator(operator) {
+    operator = this.operator;
+    console.log(operator);
+    isA = false;
+}
+function addInDisplay(digit) {
+    let number = previous + digit;
+    previous = number;
+    screen.textContent = number;
+    if (isA) {
+        a = number;
+    } else {
+        b = number;
+    }
+}
+
+function solveOperation() {
+    operate(a, b, operator);
+    clear();
+}
