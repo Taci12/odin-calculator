@@ -1,4 +1,4 @@
-let a = '', b = '', operator = '';
+let a = '', b = '', operator = '', onScreen = ''
 let screen = document.querySelector('.screen');
 let previous = '';
 let isA = true;
@@ -22,60 +22,40 @@ function squareRoot(a) {
     return Math.sqrt(a);
 }
 
-function operate(operator, a, b) {
-    if (operator === '+') {
-        a = add(a, b);
-        screen.textContent = a;
-        reset();
-    } else if (operator === '-') {
-        a = subtract(a, b);
-        screen.textContent = a;
-        reset();
-    } else if (operator === '*') {
-        a = multiply(a, b);
-        screen.textContent = a;
-        reset();
-    } else if (operator === '/') {
-        a = divide(a, b);
-        screen.textContent = a;
-        reset();
-    } else if (operator === 'power') {
-        a = squarePower(a);
-        screen.textContent = a;
-        reset();
-    } else {
-        a = squareRoot(a);
-        screen.textContent = a;
-        reset();
-    }
-}
-
 function reset() {
     a = '';
     b = '';
+    onScreen = '';
     operator = '';
-}
-function clear() {
-    screen.textContent = '';
-    reset();
-}
-function assignOperator(operator) {
-    operator = this.operator;
-    console.log(operator);
-    isA = false;
-}
-function addInDisplay(digit) {
-    let number = previous + digit;
-    previous = number;
-    screen.textContent = number;
-    if (isA) {
-        a = number;
-    } else {
-        b = number;
-    }
+    screen.textContent = onScreen;
 }
 
-function solveOperation() {
-    operate(a, b, operator);
-    clear();
+function clearScreen() {
+    onScreen = '';
+    screen.textContent = onScreen;
 }
+
+function operate(operator, a, b) {
+    if (operator === '+') {
+        onScreen = add(a, b);
+
+    } else if (operator === '-') {
+        onScreen = subtract(a, b);
+
+    } else if (operator === '*') {
+        onScreen = multiply(a, b);
+
+    } else if (operator === '/') {
+        onScreen = divide(a, b);
+
+    } else if (operator === 'power') {
+        onScreen = squarePower(a);
+
+    } else {
+        onScreen = squareRoot(a);
+    }
+    screen.textContent = onScreen;
+    return onScreen;
+}
+
+

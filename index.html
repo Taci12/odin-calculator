@@ -29,18 +29,18 @@
         <button class="seven-button button-styling number" onclick="addInDisplay('7', previous)">7</button>
         <button class="eight-button button-styling number" onclick="addInDisplay('8', previous)">8</button>
         <button class="nine-button button-styling number" onclick="addInDisplay('9', previous)">9</button>
-        <button class="add-button button-styling sign">+</button>
-        <button class="subtract-button button-styling sign">-</button>
-        <button class="multiply-button button-styling sign">*</button>
+        <button class="add-button button-styling sign" onclick="assignOperator('+')">+</button>
+        <button class="subtract-button button-styling sign" onclick="assignOperator('-')">-</button>
+        <button class="multiply-button button-styling sign" onclick="assignOperator('*')">*</button>
         <button class="divide-button button-styling sign">/</button>
-        <button class="clear-button button-styling" onclick="clear()">Clear</button>
+        <button class="clear-button button-styling" onclick="reset()">Clear</button>
         <button class="backspace-button button-styling">
             <span class="material-symbols-outlined">
                 backspace
             </span>
         </button>
-        <button class="square-power-button button-styling sign">x²</button>
-        <button class="square-root-button button-styling sign">√x</button>
+        <button class="square-power-button button-styling sign" onclick="assignOperator('power')">x²</button>
+        <button class="square-root-button button-styling sign" onclick="assignOperator('root')">√x</button>
     </div>
 </body>
 <script src="./script.js"></script>
