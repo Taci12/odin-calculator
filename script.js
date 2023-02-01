@@ -1,8 +1,7 @@
-let a = '', b = '', operator = '', onScreen = ''
+let a = '', b = '', operator = '', onScreen = '';
 let screen = document.querySelector('.screen');
 let previous = '';
-let isA = true;
-
+let newOperation = true;
 function add(a, b) {
     return (a + b);
 }
@@ -22,17 +21,10 @@ function squareRoot(a) {
     return Math.sqrt(a);
 }
 
-function reset() {
-    a = '';
-    b = '';
-    onScreen = '';
-    operator = '';
-    screen.textContent = onScreen;
-}
 
 function clearScreen() {
     onScreen = '';
-    screen.textContent = onScreen;
+    screen.textContent = '';
 }
 
 function operate(operator, a, b) {
@@ -57,5 +49,39 @@ function operate(operator, a, b) {
     screen.textContent = onScreen;
     return onScreen;
 }
+function addInDisplay(newNumber) {
+    if (newOperation) {
+        screen.textContent = newNumber;
+        onScreen = newNumber;
+        newOperation = false;
+    } else {
+        onScreen += newNumber;
+        screen.textContent = onScreen;
+    }
+}
 
+function assignOperator(newOperator) {
+    operator = newOperator;
+    a = onScreen;
+    clearScreen();
+}
 
+function pressedBackspaceButton() {
+    onScreen = onScreen.slice(0, -1);
+    screen.textContent = onScreen;
+}
+
+function pressedEqualsButton() {
+    b = onScreen;
+    a = Number(a);
+    b = Number(b);
+    onScreen = operate(operator, a, b);
+    screen.textContent = onScreen;
+    newOperation = true;
+}
+function pressedClearButton() {
+    clearScreen();
+    a = '';
+    b = '';
+    newOperation = true;
+}

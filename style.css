@@ -5,6 +5,13 @@ body {
     width: 99vw;
     height: 98vh;
 }
+
+header > h1 {
+    text-align: center;
+    margin: 2.5% auto 2.5% auto;
+    font-family: 'JetBrains Mono', sans-serif;
+}
+
 .container {
     display: grid;
     grid-template: repeat(7, 1fr) / repeat(4, 1fr); 
